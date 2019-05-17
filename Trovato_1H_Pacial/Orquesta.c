@@ -233,7 +233,7 @@ int orq_listar(Orquesta orquestas[], int limite)
             if(orquestas[i].isEmpty==1)
                 continue;
             else
-                 printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n LUGAR: %s\n TIPO: %d\n",
+                 printf("\n Posicion: %d\n ID DE LA ORQUESTA: %d\n NOMBRE ORQUESTA: %s\n LUGAR ORQUESTA: %s\n TIPO DE ORQUESTA: %d\n",
                    i, orquestas[i].idOrquesta,orquestas[i].nombre,orquestas[i].lugar,orquestas[i].tipo);
         }
         retorno=0;

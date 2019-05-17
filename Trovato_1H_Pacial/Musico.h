@@ -1,5 +1,6 @@
 #ifndef MUSICO_H_INCLUDED
 #define MUSICO_H_INCLUDED
+#include "Instrumento.h"
 
 typedef struct
 {

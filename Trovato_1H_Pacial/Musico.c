@@ -8,6 +8,7 @@
 #include "misValid.h"
 #include "Orquesta.h"
 #include "Musico.h"
+#include "Instrumento.h"
 #define MAX_CARACTER 50
 #define MIN_CARACTER 1
 #define MAX_MUSICOS 1000
@@ -44,15 +45,20 @@ int mus_alta(Musico musicos[],Orquesta orquestas[],Instrumento instrumentos[], i
             getName("\nIngrese nombre: ","\nNombre invalido",MAX_CARACTER,MIN_CARACTER,2,musicos[posicion].nombre);
             getApellido("\nIngrese apellido: ","\nLugar invalido",MAX_CARACTER,MIN_CARACTER,2,musicos[posicion].apellido);
             getInt("\nIngrese edad: ","\nEdad invalido",120,1,2,&musicos[posicion].edad);
+
+            orq_listar(orquestas,MAX_ORQUESTAS);
             getInt("\nIngrese ID de la orquesta del musico: ","\nID invalido",sizeof(int),1,2,&auxIdOrquesta);
             if(!orq_buscarID(orquestas,MAX_ORQUESTAS,auxIdOrquesta,&posicionOrquesta))
             {
                 musicos[posicion].idOrquesta=auxIdOrquesta;
             }
+
+            inst_listar(instrumentos,MAX_INSTRUMENTOS);
             getInt("\nIngrese ID del instrumento: ","\nID invalido",sizeof(int),1,2,&auxIdInstrumento);
             if(!inst_buscarID(instrumentos,MAX_INSTRUMENTOS,auxIdInstrumento,&posicionInstrumento))
             {
                 musicos[posicion].idInstrumento=auxIdInstrumento;
+                strncpy(musicos[posicion].nombreInstrumento,instrumentos[posicionInstrumento].nombre,MAX_CARACTER);
             }
 
             printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n APELLIDO: %s\n Tipo de instrumento: %d\n",
@@ -136,7 +142,7 @@ int mus_modificar(Musico* musicos, int limite)
                         getInt("\nIngrese edad del musico: ","\nError",120,1,1,&musicos[posicion].edad);
                         break;
                     case 2:
-                        getInt("\nINgrese ID de la orquesta del musico: ","\nError",sizeof(int),1,&musicos[posicion].idOrquesta);
+                        getInt("\nINgrese ID de la orquesta del musico: ","\nError",sizeof(int),1,2,&musicos[posicion].idOrquesta);
                         break;
                     case 3:
                         break;
