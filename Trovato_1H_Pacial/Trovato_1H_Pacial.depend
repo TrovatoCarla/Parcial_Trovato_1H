@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1558042686 source:/home/alumno/FantasmaPrimerPacial/Trovato_1H_Pacial/funcionesUTN.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+
+1558042686 /home/alumno/FantasmaPrimerPacial/Trovato_1H_Pacial/funcionesUTN.h
+
+1558042686 /home/alumno/FantasmaPrimerPacial/Trovato_1H_Pacial/misValid.h
+
+1558051662 source:/home/alumno/FantasmaPrimerPacial/Trovato_1H_Pacial/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+
+1558042686 source:/home/alumno/FantasmaPrimerPacial/Trovato_1H_Pacial/misValid.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesUTN.h"
+	"misValid.h"
+
+1558050996 source:/home/alumno/FantasmaPrimerPacial/Trovato_1H_Pacial/Orquesta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+	"Orquesta.h"
+
+1558047350 /home/alumno/FantasmaPrimerPacial/Trovato_1H_Pacial/Orquesta.h
+
+1558051695 /home/alumno/FantasmaPrimerPacial/Trovato_1H_Pacial/Musico.h
+
+1558051629 source:/home/alumno/FantasmaPrimerPacial/Trovato_1H_Pacial/Instrumento.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"Instrumento.h"
+
+1558051511 /home/alumno/FantasmaPrimerPacial/Trovato_1H_Pacial/Instrumento.h
+
