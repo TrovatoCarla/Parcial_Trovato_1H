@@ -45,7 +45,7 @@ int main()
                 break;
 
             case 2:
-              if(!orq_baja(orquestas,MAX_ORQUESTAS))
+              if(!orq_baja(orquestas,musicos,MAX_ORQUESTAS,MAX_MUSICOS))
                 {
                     printf("\nBAJA EXITOSA\n");
                 }

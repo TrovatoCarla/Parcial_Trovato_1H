@@ -10,9 +10,6 @@
 #define MAX_CARACTER 50
 #define MIN_CARACTER 1
 #define MAX_INSTRUMENTOS 20
-#define CUERDAS 1
-#define VIENTO_MADERA 2
-#define VIENTO_METAL 3
 #define PERCUSION 4
 
 /** \brief Solicita los datos para completar la primer posicion vacia de un array
@@ -22,7 +19,7 @@
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no hay posiciones vacias] - (0) si se agrega un nuevo elemento exitosamente
 *
 */
-int inst_alta(Instrumento instrumentos[], int limite, int* contadorID)
+int inst_alta(Instrumento* instrumentos, int limite, int* contadorID)
 {
     int retorno=-1;
     int posicion;
@@ -55,7 +52,7 @@ int inst_alta(Instrumento instrumentos[], int limite, int* contadorID)
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se modifica el elemento exitosamente
 *
 */
-int inst_modificar(Instrumento instrumentos[], int limite)
+int inst_modificar(Instrumento* instrumentos, int limite)
 {
     int retorno=-1;
     int posicion;
@@ -101,7 +98,7 @@ int inst_modificar(Instrumento instrumentos[], int limite)
 * \return int Retorna (-1) si hay error [Invalid length or NULL pointer] - (0) Si Ok
 *
 */
-int inst_Inicializar(Instrumento instrumentos[], int limite)
+int inst_Inicializar(Instrumento* instrumentos, int limite)
 {
     int i;
     int retorno;
@@ -121,7 +118,7 @@ int inst_Inicializar(Instrumento instrumentos[], int limite)
 *
 */
 
-int inst_buscarLugarVacio(Instrumento instrumentos[], int limite, int* posicion)
+int inst_buscarLugarVacio(Instrumento* instrumentos, int limite, int* posicion)
 {
     int retorno=-1;
     int i;
@@ -146,7 +143,7 @@ int inst_buscarLugarVacio(Instrumento instrumentos[], int limite, int* posicion)
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
 *
 */
-int inst_baja(Instrumento instrumentos[], int limite)
+int inst_baja(Instrumento* instrumentos, int limite)
 {
     int retorno=-1;
     int posicion;
@@ -179,7 +176,7 @@ int inst_baja(Instrumento instrumentos[], int limite)
 * \return int Return (-1) si no encuentra el valor buscado o Error [Invalid length or NULL pointer] - (0) si encuentra el valor buscado
 *
 */
-int inst_buscarID(Instrumento instrumentos[], int limite, int valorBuscado, int* posicion)
+int inst_buscarID(Instrumento* instrumentos, int limite, int valorBuscado, int* posicion)
 {
     int retorno=-1;
     int i;
@@ -206,7 +203,7 @@ int inst_buscarID(Instrumento instrumentos[], int limite, int valorBuscado, int*
 * \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se lista exitosamente
 *
 */
-int inst_listar(Instrumento instrumentos[], int limite)
+int inst_listar(Instrumento* instrumentos, int limite)
 {
     int retorno=-1;
     int i;

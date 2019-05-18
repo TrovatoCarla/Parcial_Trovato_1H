@@ -65,3 +65,69 @@
 	"Musico.h"
 	"Instrumento.h"
 
+1558191086 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/funcionesUTN.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+
+1558191086 /home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/funcionesUTN.h
+
+1558191086 /home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/misValid.h
+
+1558206502 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Instrumento.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"Instrumento.h"
+	"funcionesUTN.h"
+	"misValid.h"
+
+1558195810 /home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Instrumento.h
+
+1558194542 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+
+1558191086 /home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Orquesta.h
+
+1558191086 /home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Musico.h
+	"Instrumento.h"
+
+1558191086 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/misValid.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesUTN.h"
+	"misValid.h"
+
+1558191086 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Musico.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+
+1558195041 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Orquesta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+	"Orquesta.h"
+

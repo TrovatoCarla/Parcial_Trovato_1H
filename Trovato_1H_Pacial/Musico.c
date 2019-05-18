@@ -22,7 +22,7 @@
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no hay posiciones vacias] - (0) si se agrega un nuevo elemento exitosamente
 *
 */
-int mus_alta(Musico musicos[],Orquesta orquestas[],Instrumento instrumentos[], int limite, int* contadorID)
+int mus_alta(Musico* musicos,Orquesta* orquestas,Instrumento* instrumentos, int limite, int* contadorID)
 {
     int retorno=-1;
     int posicion;
@@ -31,7 +31,7 @@ int mus_alta(Musico musicos[],Orquesta orquestas[],Instrumento instrumentos[], i
     int posicionOrquesta;
     int posicionInstrumento;
 
-    if(musicos!=NULL && limite>0 && contadorID!=NULL)
+    if(musicos!=NULL && orquestas!=NULL && instrumentos!=NULL && limite>0 && contadorID!=NULL)
     {
         if(mus_buscarLugarVacio(musicos,limite,&posicion)==-1)
         {
@@ -77,7 +77,7 @@ int mus_alta(Musico musicos[],Orquesta orquestas[],Instrumento instrumentos[], i
 *
 */
 
-int mus_baja(Musico musicos[], int limite)
+int mus_baja(Musico* musicos, int limite)
 {
     int retorno=-1;
     int posicion;
@@ -161,7 +161,7 @@ int mus_modificar(Musico* musicos, int limite)
 * \return int Retorna (-1) si hay error [Invalid length or NULL pointer] - (0) Si Ok
 *
 */
-int mus_Inicializar(Musico musicos[], int limite)
+int mus_Inicializar(Musico* musicos, int limite)
 {
     int i;
     int retorno;
@@ -181,7 +181,7 @@ int mus_Inicializar(Musico musicos[], int limite)
 * \return int Return (-1) si no encuentra un lugar vacio o Error [Invalid length or NULL pointer] - (0) si encuentra una posicion vacia
 *
 */
-int mus_buscarLugarVacio(Musico musicos[], int limite, int* posicion)
+int mus_buscarLugarVacio(Musico* musicos, int limite, int* posicion)
 {
     int retorno=-1;
     int i;
@@ -207,7 +207,7 @@ int mus_buscarLugarVacio(Musico musicos[], int limite, int* posicion)
 * \return int Return (-1) si no encuentra el valor buscado o Error [Invalid length or NULL pointer] - (0) si encuentra el valor buscado
 *
 */
-int mus_buscarID(Musico musicos[], int limite, int valorBuscado, int* posicion)
+int mus_buscarID(Musico* musicos, int limite, int valorBuscado, int* posicion)
 {
     int retorno=-1;
     int i;
@@ -233,7 +233,7 @@ int mus_buscarID(Musico musicos[], int limite, int valorBuscado, int* posicion)
 * \param limite int Tamaño del array
 * \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se lista exitosamente
 */
-int mus_listar(Musico musicos[], int limite)
+int mus_listar(Musico* musicos, int limite)
 {
     int retorno=-1;
     int i;

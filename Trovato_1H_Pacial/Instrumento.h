@@ -10,12 +10,12 @@ typedef struct
 
 }Instrumento;
 
-int inst_alta(Instrumento instrumentos[], int limite, int* contadorID);
-int inst_baja(Instrumento instrumentos[], int limite);
-int inst_Inicializar(Instrumento instrumentos[], int limite);
-int inst_buscarLugarVacio(Instrumento instrumentos[], int limite, int* posicion);
-int inst_buscarID(Instrumento instrumentos[], int limite, int valorBuscado, int* posicion);
-int inst_listar(Instrumento instrumentos[], int limite);
+int inst_alta(Instrumento* instrumentos, int limite, int* contadorID);
+int inst_baja(Instrumento* instrumentos, int limite);
+int inst_Inicializar(Instrumento* instrumentos, int limite);
+int inst_buscarLugarVacio(Instrumento* instrumentos, int limite, int* posicion);
+int inst_buscarID(Instrumento* instrumentos, int limite, int valorBuscado, int* posicion);
+int inst_listar(Instrumento* instrumentos, int limite);
 
 
 #endif // INSTRUMENTO_H_INCLUDED
