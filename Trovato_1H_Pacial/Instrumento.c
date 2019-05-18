@@ -37,8 +37,10 @@ int inst_alta(Instrumento* instrumentos, int limite, int* contadorID)
             getName("\nIngrese nombre del instrumento: ","\nNombre invalido",MAX_CARACTER,MIN_CARACTER,2,instrumentos[posicion].nombre);
             getInt("\nIngrese tipo de instrumentos: \n1- Cuerdas\n 2-Viento-madera\n 3- Viento-metal\n 4- Percusion\n","\nTipo invalido",sizeof(int),1,2,&instrumentos[posicion].tipo);
 
-            printf("\n Posicion: %d\n ID: %d\n NOMBRE DEL INSTRUMENTO: %s\n Tipo: %d\n",
-                   posicion, instrumentos[posicion].idInstrumento,instrumentos[posicion].nombre,instrumentos[posicion].tipo);
+
+            inst_listar(instrumentos,MAX_INSTRUMENTOS);
+            /*printf("\n Posicion: %d\n ID: %d\n NOMBRE DEL INSTRUMENTO: %s\n Tipo: %d\n",
+                   posicion, instrumentos[posicion].idInstrumento,instrumentos[posicion].nombre,instrumentos[posicion].tipo);*/
 
             retorno=0;
         }
@@ -74,6 +76,7 @@ int inst_modificar(Instrumento* instrumentos, int limite)
                   posicion, instrumentos[posicion].idInstrumento,instrumentos[posicion].nombre,instrumentos[posicion].tipo);
 
                 getInt("\nModificar:\n 1) Edad\n 2) ID de Orquesta del musico\n 3) Salir)\n","\nError",sizeof(int),1,1,&opcion);
+                system("clear");
                 switch(opcion)
                 {
                     case 1:
@@ -214,8 +217,26 @@ int inst_listar(Instrumento* instrumentos, int limite)
             if(instrumentos[i].isEmpty==1)
                 continue;
             else
-                 printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n TIPO: %d\n",
-                   i, instrumentos[i].idInstrumento,instrumentos[i].nombre,instrumentos[i].tipo);
+            {
+                 printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n",
+                   i, instrumentos[i].idInstrumento,instrumentos[i].nombre);
+
+                     switch(instrumentos[i].tipo)
+                    {
+                        case 1:
+                            printf(" Tipo: Cuerdas\n");
+                            break;
+                        case 2:
+                            printf(" Tipo: Viento-madera\n");
+                            break;
+                        case 3:
+                            printf(" Tipo: Viento-metal\n");
+                            break;
+                        case 4:
+                            printf(" Tipo: Percusion\n");
+                            break;
+                    }
+            }
         }
         retorno=0;
     }

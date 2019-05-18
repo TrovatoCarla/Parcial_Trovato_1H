@@ -7,7 +7,6 @@
 #include "funcionesUTN.h"
 #include "misValid.h"
 #include "Orquesta.h"
-//#include "Musico.h"
 #define MAX_CARACTER 50
 #define MIN_CARACTER 1
 #define MAX_ORQUESTAS 50
@@ -46,8 +45,8 @@ int orq_alta(Orquesta* orquestas, int limite, int* contadorID)
                 strncpy(orquestas[posicion].nombre,auxNombre,MAX_CARACTER);
                 strncpy(orquestas[posicion].lugar,auxLugar,MAX_CARACTER);
                 orquestas[posicion].tipo=auxTipo;
-                printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n LUGAR: %s\n Tipo: %d\n",
-                        posicion, orquestas[posicion].idOrquesta,orquestas[posicion].nombre,orquestas[posicion].lugar,orquestas[posicion].tipo);
+
+                orq_listar(orquestas,MAX_ORQUESTAS);
 
             retorno=0;
             }
@@ -62,7 +61,7 @@ int orq_alta(Orquesta* orquestas, int limite, int* contadorID)
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
 *
 */
-int orq_baja(Orquesta* orquestas,Musico* musicos, int limiteOrquesta,int limiteMusico)
+/*int orq_baja(Orquesta* orquestas,Musico* musicos, int limiteOrquesta,int limiteMusico)
 {
     int retorno=-1;
     int posicionOrquesta;
@@ -97,7 +96,7 @@ int orq_baja(Orquesta* orquestas,Musico* musicos, int limiteOrquesta,int limiteM
         }
     }
     return retorno;
-}
+}*/
 
 /** \brief Busca un elemento por ID y modifica sus campos
 * \param array musicos Array de musicos
@@ -127,6 +126,7 @@ int orq_modificar(Orquesta* orquestas, int limite)
                    posicion, orquestas[posicion].idOrquesta,orquestas[posicion].nombre,orquestas[posicion].lugar,orquestas[posicion].tipo);
 
                 getInt("\nModificar:\n 1) NOMBRE\n 2) LUGAR \n 3) Tipo\n 4) Salir\n","\nError",sizeof(int),1,1,&opcion);
+                system("clear");
                 switch(opcion)
                 {
                     case 1:
@@ -248,22 +248,29 @@ int orq_listar(Orquesta* orquestas, int limite)
             if(orquestas[i].isEmpty==1)
                 continue;
             else
-                 printf("\n Posicion: %d\n ID DE LA ORQUESTA: %d\n NOMBRE ORQUESTA: %s\n LUGAR ORQUESTA: %s\n TIPO DE ORQUESTA: %d\n",
-                   i, orquestas[i].idOrquesta,orquestas[i].nombre,orquestas[i].lugar,orquestas[i].tipo);
+                 printf("\n Posicion: %d\n ID DE LA ORQUESTA: %d\n NOMBRE ORQUESTA: %s\n LUGAR ORQUESTA: %s\n",
+                   i, orquestas[i].idOrquesta,orquestas[i].nombre,orquestas[i].lugar);
+
+                    switch(orquestas[i].tipo)
+                    {
+                        case 1:
+                            printf(" TIPO DE ORQUESTA: Sinfonica\n");
+                            break;
+                        case 2:
+                            printf(" TIPO DE ORQUESTA: Filarmonica\n");
+                            break;
+                        case 3:
+                            printf(" TIPO DE ORQUESTA: Camara\n");
+                            break;
+                        default:
+                            break;
+                    }
         }
         retorno=0;
     }
     return retorno;
 }
 
-int tipoOrquesta(Orquesta* orquestas,int limite)
-{
-    int retorno=-1;
-    int i;
-     for()
-    if(orquestas[i])
 
-
-}
 
 #endif // ORQUESTA_C_INCLUDED

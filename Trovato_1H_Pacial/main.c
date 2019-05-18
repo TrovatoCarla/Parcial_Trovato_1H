@@ -29,6 +29,78 @@ int main()
     {
         printf("\nINICIALIZACIONES CORRECTAS\n");
     }
+    /*
+    orquestas[0].idOrquesta=1;
+    orquestas[0].isEmpty=0;
+    strcpy(orquestas[0].nombre,"Metallica");
+    strcpy(orquestas[0].lugar,"San Francisco");
+    orquestas[0].tipo = 1;
+    contadorIdInstrumentos++;
+
+    orquestas[1].idOrquesta=2;
+    orquestas[1].isEmpty=0;
+    strcpy(orquestas[1].nombre,"Grande");
+    strcpy(orquestas[1].lugar,"Cordoba");
+    orquestas[1].tipo = 2;
+    contadorIdOrquestas++;
+
+    orquestas[2].idOrquesta=3;
+    orquestas[2].isEmpty=0;
+    strcpy(orquestas[2].nombre,"Magnifica");
+    strcpy(orquestas[2].lugar,"La Matanza");
+    orquestas[2].tipo = 3;
+    contadorIdOrquestas++;
+
+    orquestas[3].idOrquesta=4;
+    orquestas[3].isEmpty=0;
+    strcpy(orquestas[3].nombre,"Callejera");
+    strcpy(orquestas[3].lugar,"Boedo");
+    orquestas[3].tipo = 1;
+    contadorIdOrquestas++;
+
+    instrumentos[0].idInstrumento=1;
+    instrumentos[0].isEmpty=0;
+    strcpy(instrumentos[0].nombre,"Guitarra");
+    instrumentos[0].tipo = 1;
+    contadorIdInstrumentos++;
+
+    instrumentos[1].idInstrumento=2;
+    instrumentos[1].isEmpty=0;
+    strcpy(instrumentos[1].nombre,"Bateria");
+    instrumentos[1].tipo = 4;
+    contadorIdInstrumentos++;
+
+    instrumentos[2].idInstrumento=3;
+    instrumentos[2].isEmpty=0;
+    strcpy(instrumentos[2].nombre,"Flauta traverza");
+    instrumentos[2].tipo = 3;
+    contadorIdInstrumentos++;
+
+    instrumentos[3].idInstrumento=4;
+    instrumentos[3].isEmpty=0;
+    strcpy(instrumentos[3].nombre,"Violin");
+    instrumentos[3].tipo = 1;
+    contadorIdInstrumentos++;
+
+    strcpy(musicos[0].nombre,"carla");
+    strcpy(musicos[0].apellido,"Trovato");
+    musicos[0].edad = 29;
+    musicos[0].isEmpty = 0;
+    musicos[0].idMusico = 1;
+    musicos[0].idInstrumento=4;
+    musicos[0].idOrquesta=2;
+
+
+    strcpy(musicos[1].nombre,"karen");
+    strcpy(musicos[1].apellido,"ramirez");
+    musicos[1].edad = 26;
+    musicos[1].isEmpty = 0;
+    musicos[1].idMusico = 2;
+    musicos[1].idInstrumento=3;
+    musicos[1].idOrquesta=1;
+    */
+
+
 
     do
     {
@@ -45,7 +117,7 @@ int main()
                 break;
 
             case 2:
-              if(!orq_baja(orquestas,musicos,MAX_ORQUESTAS,MAX_MUSICOS))
+              if(!musYorq_baja(orquestas,musicos,MAX_ORQUESTAS,MAX_MUSICOS))
                 {
                     printf("\nBAJA EXITOSA\n");
                 }
@@ -63,14 +135,14 @@ int main()
                 break;
 
             case 5:
-                if(!mus_modificar(musicos,MAX_MUSICOS))
+                if(!mus_modificar(musicos,instrumentos,orquestas,MAX_MUSICOS,MAX_INSTRUMENTOS,MAX_ORQUESTAS))
                 {
                     printf("\nMODIFICACION EXITOSA\n");
                 }
                 break;
 
             case 6:
-                if(!mus_baja(musicos,MAX_MUSICOS))
+                if(!mus_baja(musicos,instrumentos,MAX_MUSICOS,MAX_INSTRUMENTOS))
                 {
                     printf("\nBAJA EXITOSA\n");
                 }

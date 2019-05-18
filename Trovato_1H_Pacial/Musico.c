@@ -59,10 +59,9 @@ int mus_alta(Musico* musicos,Orquesta* orquestas,Instrumento* instrumentos, int 
             {
                 musicos[posicion].idInstrumento=auxIdInstrumento;
                 strncpy(musicos[posicion].nombreInstrumento,instrumentos[posicionInstrumento].nombre,MAX_CARACTER);
+                musicos[posicion].tipoDeInstrumento=instrumentos[posicionInstrumento].tipo;
             }
-
-            printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n APELLIDO: %s\n Tipo de instrumento: %d\n",
-                   posicion, musicos[posicion].idMusico,musicos[posicion].nombre,musicos[posicion].apellido,musicos[posicion].tipoDeInstrumento);
+            mus_listar(musicos,MAX_MUSICOS);
 
             retorno=0;
         }
@@ -77,17 +76,17 @@ int mus_alta(Musico* musicos,Orquesta* orquestas,Instrumento* instrumentos, int 
 *
 */
 
-int mus_baja(Musico* musicos, int limite)
+int mus_baja(Musico* musicos,Instrumento* instrumentos, int limiteMusicos,int limiteInstrumetos)
 {
     int retorno=-1;
     int posicion;
     int id;
-    if(musicos!=NULL && limite>0)
+    if(musicos!=NULL && instrumentos!=NULL && limiteMusicos>0 && limiteInstrumetos>0)
     {
         mus_listar(musicos,MAX_MUSICOS);
         getInt("\nIngrese ID a cancelar: ","\nError",sizeof(int),1,2,&id);
 
-        if(mus_buscarID(musicos,limite,id,&posicion)==-1)
+        if(mus_buscarID(musicos,limiteMusicos,id,&posicion)==-1)
         {
             printf("\nNo existe este ID");
         }
@@ -114,17 +113,21 @@ int mus_baja(Musico* musicos, int limite)
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se modifica el elemento exitosamente
 *
 */
-int mus_modificar(Musico* musicos, int limite)
+int mus_modificar(Musico* musicos,Instrumento* instrumentos,Orquesta* orquestas, int limiteMusicos,int limiteInstrumentos,int limiteOrquestas)
 {
     int retorno=-1;
     int posicion;
     int id;
     int opcion;
-    if(musicos!=NULL && limite>0)
+    int auxIdnuevo;
+    //int posicionOrquestaAmodificar;
+
+    if(musicos!=NULL && instrumentos!=NULL && orquestas!=NULL && limiteMusicos>0 && limiteInstrumentos>0 && limiteOrquestas>0)
     {
         mus_listar(musicos,MAX_MUSICOS);
+
         getInt("\nIngrese ID a modificar: ","\nError",sizeof(int),1,2,&id);
-        if(mus_buscarID(musicos,limite,id,&posicion)==-1)
+        if(mus_buscarID(musicos,limiteMusicos,id,&posicion)==-1)
         {
             printf("\nNo existe este ID");
         }
@@ -132,17 +135,31 @@ int mus_modificar(Musico* musicos, int limite)
         {
             do
             {
-                 printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n APELLIDO: %s\n Tipo de instrumento: %d\n",
-                  posicion, musicos[posicion].idMusico,musicos[posicion].nombre,musicos[posicion].apellido,musicos[posicion].tipoDeInstrumento);
+                 mus_listar(musicos,MAX_MUSICOS);
 
                 getInt("\nModificar:\n 1) Edad\n 2) ID de Orquesta del musico\n 3) Salir)\n","\nError",sizeof(int),1,1,&opcion);
+                system("clear");
                 switch(opcion)
                 {
                     case 1:
-                        getInt("\nIngrese edad del musico: ","\nError",120,1,1,&musicos[posicion].edad);
+                        if(!getInt("\nIngrese edad del musico: ","\nError",120,1,1,&musicos[posicion].edad))
+                        {
+                            printf("\n EDAD MODIFICADA CORRECTAMENTE\n\n");
+                        }
                         break;
                     case 2:
-                        getInt("\nINgrese ID de la orquesta del musico: ","\nError",sizeof(int),1,2,&musicos[posicion].idOrquesta);
+                        if(!getInt("\nINgrese el nuevo ID de la orquesta: ","\nError",sizeof(int),1,2,&auxIdnuevo))
+                        {
+                            if(!orq_buscarID(orquestas,MAX_ORQUESTAS,auxIdnuevo,&posicion))
+                            {
+                                printf("\n ID ENCONTRADO\n\n");
+                                musicos[posicion].idOrquesta=auxIdnuevo;
+                                printf("\nID ORQUESTA MODIFICADO CORRECTAMENTE\n\n");
+                            }
+                            else
+                                printf("\nID INEXISTENTE\n\n");
+
+                        }
                         break;
                     case 3:
                         break;
@@ -233,24 +250,83 @@ int mus_buscarID(Musico* musicos, int limite, int valorBuscado, int* posicion)
 * \param limite int Tamaño del array
 * \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se lista exitosamente
 */
-int mus_listar(Musico* musicos, int limite)
+int mus_listar(Musico* musicos,int limiteMusicos)
 {
     int retorno=-1;
     int i;
-    if(musicos!=NULL && limite>=0)
+    if(musicos!=NULL && limiteMusicos>=0)
     {
-        for(i=0;i<limite;i++)
+        for(i=0;i<limiteMusicos;i++)
         {
             if(musicos[i].isEmpty==1)
                 continue;
             else
-                 printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n APELLIDO: %s\n INSTRUMENTO: %s\n TIPO DE INSTRUMENTO: %d",
-                   i, musicos[i].idMusico,musicos[i].nombre,musicos[i].apellido,musicos[i].nombreInstrumento,musicos[i].tipoDeInstrumento);
+                 printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n APELLIDO: %s\n INSTRUMENTO: %s\n",
+                   i, musicos[i].idMusico,musicos[i].nombre,musicos[i].apellido,musicos[i].nombreInstrumento);
+
+                    switch(musicos[i].tipoDeInstrumento)
+                    {
+                        case 1:
+                            printf(" TIPO DE INSTRUMENTO: Cuerdas\n");
+                            break;
+                        case 2:
+                            printf(" TIPO DE INSTRUMENTO: Viento-madera\n");
+                            break;
+
+                        case 3:
+                            printf(" TIPO DE INSTRUMENTO: Viento-metal\n");
+                            break;
+                        case 4:
+                            printf(" TIPO DE INSTRUMENTO: Percusion\n");
+                            break;
+                    }
+
         }
         retorno=0;
     }
     return retorno;
 }
 
+/** \brief Borra un elemento del array por ID
+* \param array orquestas Array orquestas
+* \param limite int Tamaño del array
+* \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
+*
+*/
+int musYorq_baja(Orquesta* orquestas,Musico* musicos, int limiteOrquesta,int limiteMusico)
+{
+    int retorno=-1;
+    int posicionOrquesta;
+    int id;
+    int i;
 
+    orq_listar(orquestas,MAX_ORQUESTAS);
+    if(orquestas!=NULL && musicos!=NULL && limiteOrquesta>0 && limiteMusico>0)
+    {
+        getInt("\nIngrese ID a cancelar: ","\nError",sizeof(int),1,2,&id);
+
+        if(orq_buscarID(orquestas,MAX_ORQUESTAS,id,&posicionOrquesta)== -1)
+        {
+            printf("\nNo existe este ID");
+        }
+        else
+        {
+                for(i=0;i<limiteMusico;i++)
+                {
+                    if(musicos[i].idOrquesta==orquestas[posicionOrquesta].idOrquesta)
+                    {
+                        musicos[i].isEmpty= 1;
+                    }
+
+                }
+            orquestas[posicionOrquesta].isEmpty= 2;
+            orquestas[posicionOrquesta].idOrquesta=0;
+            orquestas[posicionOrquesta].tipo=0;
+            strcpy(orquestas[posicionOrquesta].nombre,"");
+            strcpy(orquestas[posicionOrquesta].lugar,"");
+            retorno=0;
+        }
+    }
+    return retorno;
+}
 #endif // MUSICO_C_INCLUDED
