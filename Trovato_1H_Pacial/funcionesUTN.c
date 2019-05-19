@@ -16,12 +16,13 @@ int getInt(char *mensaje,char *mensajeError,int maximo,int minimo,int reintentos
     int retorno=-1;
         if(mensaje!=NULL &&
             mensajeError!=NULL &&
-            maximo>minimo &&
+            maximo>=minimo &&
             reintentos>=0 &&
             resultado!=NULL)
 
             for(i=0;i<reintentos;i++)
             {
+                __fpurge(stdin);
                 printf("%s",mensaje);
                 scanf("%d",&auxiliar);
                 if(!isValidInt(auxiliar,maximo))

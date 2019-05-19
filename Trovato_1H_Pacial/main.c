@@ -7,11 +7,14 @@
 #include "Orquesta.h"
 #include "Musico.h"
 #include "Instrumento.h"
+#include "Informes.h"
 #define MAX_CARACTER 50
 #define MIN_CARACTER 1
 #define MAX_ORQUESTAS 50
 #define MAX_MUSICOS 1000
 #define MAX_INSTRUMENTOS 20
+#define SORT_UP 1
+#define SORT_DOWN 0
 
 int main()
 {
@@ -29,7 +32,7 @@ int main()
     {
         printf("\nINICIALIZACIONES CORRECTAS\n");
     }
-    /*
+
     orquestas[0].idOrquesta=1;
     orquestas[0].isEmpty=0;
     strcpy(orquestas[0].nombre,"Metallica");
@@ -83,12 +86,11 @@ int main()
     contadorIdInstrumentos++;
 
     strcpy(musicos[0].nombre,"carla");
-    strcpy(musicos[0].apellido,"Trovato");
+    strcpy(musicos[0].apellido,"trovato");
     musicos[0].edad = 29;
     musicos[0].isEmpty = 0;
     musicos[0].idMusico = 1;
-    musicos[0].idInstrumento=4;
-    musicos[0].idOrquesta=2;
+    contadorIdMusicos++;
 
 
     strcpy(musicos[1].nombre,"karen");
@@ -96,15 +98,27 @@ int main()
     musicos[1].edad = 26;
     musicos[1].isEmpty = 0;
     musicos[1].idMusico = 2;
-    musicos[1].idInstrumento=3;
-    musicos[1].idOrquesta=1;
-    */
+    contadorIdMusicos++;
 
+    strcpy(musicos[2].nombre,"Zoe");
+    strcpy(musicos[2].apellido,"zarate");
+    musicos[2].edad = 50;
+    musicos[2].isEmpty = 0;
+    musicos[2].idMusico = 3;
+    contadorIdMusicos++;
 
+    strcpy(musicos[3].nombre,"Ana");
+    strcpy(musicos[3].apellido,"costanzo");
+    musicos[3].edad = 12;
+    musicos[3].isEmpty = 0;
+    musicos[3].idMusico = 4;
+    contadorIdMusicos++;
+
+    mus_listar(musicos,MAX_MUSICOS);
 
     do
     {
-        getInt("\n\n1) Alta de Orquesta \n2) Eliminar Orquesta \n3) Listar Orquestas \n4) Agregar Musico \n5) Modificar Musico \n6) Eliminar Musico \n7) Listar Musico \n8) Agregar Instrumento \n9) Listar instrumentos\n",                   //cambiar
+        getInt("\n\n1) Alta de Orquesta \n2) Eliminar Orquesta \n3) Listar Orquestas \n4) Agregar Musico \n5) Modificar Musico \n6) Eliminar Musico \n7) Listar Musico \n8) Agregar Instrumento \n9) Listar instrumentos \n10) INFORMES\n\n ",                   //cambiar
                       "\nError",sizeof(int),1,1,&opcion);
          system("clear");
         switch(opcion)
@@ -117,14 +131,22 @@ int main()
                 break;
 
             case 2:
-              if(!musYorq_baja(orquestas,musicos,MAX_ORQUESTAS,MAX_MUSICOS))
+              if((contadorIdOrquestas>0) && (contadorIdMusicos>0))
                 {
+                    musYorq_baja(orquestas,musicos,MAX_ORQUESTAS,MAX_MUSICOS);
                     printf("\nBAJA EXITOSA\n");
                 }
+                else
+                    printf("\nNO HAY ORQUESTAS Y MUSICOS DADOS DE ALTA\n");
                 break;
 
             case 3:
-                orq_listar(orquestas,MAX_ORQUESTAS);
+                if(contadorIdOrquestas>0)
+                {
+                    orq_listar(orquestas,MAX_ORQUESTAS);
+                }
+                else
+                    printf("\nNO HAY ORQUESTAS DADAS DE ALTA\n");
                 break;
 
            case 4:
@@ -135,21 +157,32 @@ int main()
                 break;
 
             case 5:
-                if(!mus_modificar(musicos,instrumentos,orquestas,MAX_MUSICOS,MAX_INSTRUMENTOS,MAX_ORQUESTAS))
+                if(contadorIdMusicos>0)
                 {
+                    mus_modificar(musicos,instrumentos,orquestas,MAX_MUSICOS,MAX_INSTRUMENTOS,MAX_ORQUESTAS);
                     printf("\nMODIFICACION EXITOSA\n");
                 }
+                else
+                    printf("\nNO HAY MUSICOS DADOS DE ALTA\n");
                 break;
 
             case 6:
-                if(!mus_baja(musicos,instrumentos,MAX_MUSICOS,MAX_INSTRUMENTOS))
+                if(contadorIdMusicos>0)
                 {
+                    mus_baja(musicos,instrumentos,MAX_MUSICOS,MAX_INSTRUMENTOS);
                     printf("\nBAJA EXITOSA\n");
                 }
+                else
+                    printf("\nNO HAY MUSICOS DADOS DE ALTA\n");
                 break;
 
             case 7:
-                mus_listar(musicos,MAX_MUSICOS);
+                if(contadorIdMusicos>0)
+                {
+                    mus_listar(musicos,MAX_MUSICOS);
+                }
+                else
+                    printf("\nNO HAY MUSICOS DADOS DE ALTA PARA LISTAR\n");
                 break;
 
             case 8:
@@ -160,12 +193,23 @@ int main()
                 break;
 
             case 9:
-                inst_listar(instrumentos,MAX_INSTRUMENTOS);
+                if(contadorIdInstrumentos>0)
+                {
+                    inst_listar(instrumentos,MAX_INSTRUMENTOS);
+                }
+                else
+                    printf("\nNO HAY INSTRUMENTOS DADOS DE ALTA PARA LISTAR\n");
+                break;
+
+            case 10:
+
+               inf_promedioEdades(musicos,MAX_MUSICOS);
+
                 break;
             default:
                 printf("\nOpcion no valida\n");
         }
-    }while(opcion!=9);
+    }while(opcion!=10);
 
     return 0;
 }

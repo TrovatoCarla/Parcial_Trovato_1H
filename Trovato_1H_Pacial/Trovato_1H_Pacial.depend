@@ -65,7 +65,7 @@
 	"Musico.h"
 	"Instrumento.h"
 
-1558191086 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/funcionesUTN.c
+1558217486 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/funcionesUTN.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -88,7 +88,7 @@
 
 1558195810 /home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Instrumento.h
 
-1558217058 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/main.c
+1558285311 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -98,6 +98,7 @@
 	"Orquesta.h"
 	"Musico.h"
 	"Instrumento.h"
+	"Informes.h"
 
 1558215158 /home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Orquesta.h
 
@@ -112,7 +113,7 @@
 	"funcionesUTN.h"
 	"misValid.h"
 
-1558217081 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Musico.c
+1558217241 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Musico.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -131,4 +132,15 @@
 	"funcionesUTN.h"
 	"misValid.h"
 	"Orquesta.h"
+
+1558285379 source:/home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+
+1558284842 /home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Informes.h
 
