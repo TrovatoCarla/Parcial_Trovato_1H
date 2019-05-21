@@ -17,7 +17,7 @@ typedef struct
 
 }Musico;
 
-int mus_alta(Musico* musicos,Orquesta* orquestas,Instrumento* instrumentos, int limite, int* contadorID);
+int mus_alta(Musico* musicos,Orquesta* orquestas,Instrumento* instrumentos, int limiteMusico,int limiteOrquesta,int limiteInstrumento, int* contadorID);
 int mus_baja(Musico* musicos,Instrumento* instrumentos, int limiteMusicos,int limiteInstrumetos);
 int musYorq_baja(Orquesta* orquestas,Musico* musicos, int limiteOrquesta,int limiteMusico);
 int mus_modificar(Musico* musicos,Instrumento* instrumentos,Orquesta* orquestas, int limiteMusicos,int limiteInstrumentos,int limiteOrquestas);

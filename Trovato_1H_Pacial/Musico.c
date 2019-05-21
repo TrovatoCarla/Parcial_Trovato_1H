@@ -22,7 +22,7 @@
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no hay posiciones vacias] - (0) si se agrega un nuevo elemento exitosamente
 *
 */
-int mus_alta(Musico* musicos,Orquesta* orquestas,Instrumento* instrumentos, int limite, int* contadorID)
+int mus_alta(Musico* musicos,Orquesta* orquestas,Instrumento* instrumentos, int limiteMusico,int limiteOrquesta,int limiteInstrumento, int* contadorID)
 {
     int retorno=-1;
     int posicion;
@@ -31,9 +31,10 @@ int mus_alta(Musico* musicos,Orquesta* orquestas,Instrumento* instrumentos, int 
     int posicionOrquesta;
     int posicionInstrumento;
 
-    if(musicos!=NULL && orquestas!=NULL && instrumentos!=NULL && limite>0 && contadorID!=NULL)
+
+    if(musicos!=NULL && orquestas!=NULL && instrumentos!=NULL && limiteMusico>=0 && limiteOrquesta>=0 && limiteInstrumento>=0 && contadorID!=NULL)
     {
-        if(mus_buscarLugarVacio(musicos,limite,&posicion)==-1)
+        if(mus_buscarLugarVacio(musicos,limiteMusico,&posicion)==-1)
         {
             printf("\nNo hay lugares vacios");
         }
@@ -120,7 +121,6 @@ int mus_modificar(Musico* musicos,Instrumento* instrumentos,Orquesta* orquestas,
     int id;
     int opcion;
     int auxIdnuevo;
-    //int posicionOrquestaAmodificar;
 
     if(musicos!=NULL && instrumentos!=NULL && orquestas!=NULL && limiteMusicos>0 && limiteInstrumentos>0 && limiteOrquestas>0)
     {
@@ -189,7 +189,6 @@ int mus_Inicializar(Musico* musicos, int limite)
     }
     return retorno;
 }
-
 
 /** \brief Busca el primer lugar vacio en el array
 * \param array musicos Array musicos
@@ -261,7 +260,8 @@ int mus_listar(Musico* musicos,int limiteMusicos)
             if(musicos[i].isEmpty==1)
                 continue;
             else
-                 printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n APELLIDO: %s\n INSTRUMENTO: %s\n",
+             {
+                printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n APELLIDO: %s\n INSTRUMENTO: %s\n",
                    i, musicos[i].idMusico,musicos[i].nombre,musicos[i].apellido,musicos[i].nombreInstrumento);
 
                     switch(musicos[i].tipoDeInstrumento)
@@ -280,7 +280,7 @@ int mus_listar(Musico* musicos,int limiteMusicos)
                             printf(" TIPO DE INSTRUMENTO: Percusion\n");
                             break;
                     }
-
+            }
         }
         retorno=0;
     }

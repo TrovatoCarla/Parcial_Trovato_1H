@@ -27,8 +27,6 @@ int main()
     int contadorIdMusicos=0;
     int contadorIdInstrumentos=0;
 
-    char nombreInstrumento[30];
-
     if((!orq_Inicializar(orquestas,MAX_ORQUESTAS)) && ((!mus_Inicializar(musicos,MAX_MUSICOS)) && (!inst_Inicializar(instrumentos,MAX_INSTRUMENTOS))))
 
     {
@@ -94,7 +92,6 @@ int main()
     musicos[0].idMusico = 1;
     contadorIdMusicos++;
 
-
     strcpy(musicos[1].nombre,"karen");
     strcpy(musicos[1].apellido,"ramirez");
     musicos[1].edad = 26;
@@ -152,7 +149,7 @@ int main()
                 break;
 
            case 4:
-                if(!mus_alta(musicos,orquestas,instrumentos,MAX_MUSICOS,&contadorIdMusicos))
+                if(!mus_alta(musicos,orquestas,instrumentos,MAX_MUSICOS,MAX_ORQUESTAS,MAX_INSTRUMENTOS,&contadorIdMusicos))
                 {
                     printf("\nALTA EXITOSA\n");
                 }
@@ -205,7 +202,7 @@ int main()
 
             case 10:
 
-               Informes_listarPorCriterio(musicos,instrumentos,MAX_MUSICOS,MAX_INSTRUMENTOS,nombreInstrumento);
+               inf_ordenarApellidoNombre(musicos,MAX_MUSICOS,SORT_DOWN,SORT_UP);
 
                 break;
             default:
