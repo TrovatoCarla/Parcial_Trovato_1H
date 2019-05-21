@@ -27,6 +27,8 @@ int main()
     int contadorIdMusicos=0;
     int contadorIdInstrumentos=0;
 
+    char nombreInstrumento[30];
+
     if((!orq_Inicializar(orquestas,MAX_ORQUESTAS)) && ((!mus_Inicializar(musicos,MAX_MUSICOS)) && (!inst_Inicializar(instrumentos,MAX_INSTRUMENTOS))))
 
     {
@@ -81,7 +83,7 @@ int main()
 
     instrumentos[3].idInstrumento=4;
     instrumentos[3].isEmpty=0;
-    strcpy(instrumentos[3].nombre,"Violin");
+    strcpy(instrumentos[3].nombre,"Guitarra");
     instrumentos[3].tipo = 1;
     contadorIdInstrumentos++;
 
@@ -203,7 +205,7 @@ int main()
 
             case 10:
 
-               inf_promedioEdades(musicos,MAX_MUSICOS);
+               Informes_listarPorCriterio(musicos,instrumentos,MAX_MUSICOS,MAX_INSTRUMENTOS,nombreInstrumento);
 
                 break;
             default:

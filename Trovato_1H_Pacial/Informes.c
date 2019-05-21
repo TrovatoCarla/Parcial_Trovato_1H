@@ -9,6 +9,13 @@
 #include "Musico.h"
 #define MAX_ORQUESTAS 50
 
+
+
+/** \brief Cuenta cantidad de orquestas segun su tipo
+* \param Orquesta orquestas array orquestas
+* \param limite tamaño del array
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*/
 int inf_contadorTipoOrquesta(Orquesta* orquestas,int limite)
 {
     int i;
@@ -45,6 +52,11 @@ int inf_contadorTipoOrquesta(Orquesta* orquestas,int limite)
     return retorno;
 }
 
+/** \brief Cuenta cantidad de instrumentos segun su tipo
+* \param  Instrumento instrumentos array de instrumentos
+* \param limite tamaño del array
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*/
 int inf_contadorTipoInstrumentos(Instrumento* instrumentos,int limite)
 {
     int i;
@@ -86,7 +98,14 @@ int inf_contadorTipoInstrumentos(Instrumento* instrumentos,int limite)
     return retorno;
 }
 
-int inf_cantidadMusicosPorOrquesta(Musico* musicos,Orquesta* orquestas, int limiteMusico, int limiteOrquesta) ///cambiar Fantasma
+/** \brief Cuenta cantidad de musicos por orquesta
+* \param Musico musicos , array de musicos
+* \param Orquesta orquestas, array de orquestas
+* \param limiteMusico tamaño del array musicos
+* \param limiteOrquesta tamaño del array orquesta
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*/
+int inf_cantidadMusicosPorOrquesta(Musico* musicos,Orquesta* orquestas, int limiteMusico, int limiteOrquesta)
 {
     int retorno=-1;
     int i;
@@ -123,6 +142,14 @@ int inf_cantidadMusicosPorOrquesta(Musico* musicos,Orquesta* orquestas, int limi
     return retorno;
 }
 
+/** \brief Ordena el array de musicos por apellido y nombre
+* \param Musico* musicos  Array de musicos
+* \param limite int Tamaño del array musicos
+* \param orderFirst int Determina si el orden del primer criterio es ascendete o descendente
+* \param orderSecond int Determina si el orden del segunbdo criterio es ascendete o descendente
+* \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se ordena exitosamente
+*
+*/
 int inf_ordenarApellidoNombre(Musico* musicos,int limite, int orderFirst, int orderSecond)///Sort Down Sort Down a-->z                              //cambiar fantasma
 {
     int retorno=-1;
@@ -163,6 +190,11 @@ int inf_ordenarApellidoNombre(Musico* musicos,int limite, int orderFirst, int or
     return retorno;
 }
 
+/** \brief Calcula promedio de edad de los musicos
+* \param Musico musicos , array de musicos
+* \param limiteMusico tamaño del array musicos
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*/
 int inf_promedioEdades(Musico* musicos,int limiteMusico)
 {
     int i;
@@ -182,8 +214,10 @@ int inf_promedioEdades(Musico* musicos,int limiteMusico)
             }
             promedioEdades=acumuladorEdades/contadorEdades;
         }
-        printf("\nEl promedio de edades de los musicos es: %.2f",promedioEdades);
+        printf("\nEl promedio de edades de los musicos es: %.2f\n\n",promedioEdades);
 
     return 0;
 }
+
+
 #endif // INFORMES_C_INCLUDED
