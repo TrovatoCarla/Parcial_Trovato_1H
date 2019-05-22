@@ -52,6 +52,7 @@ int mus_alta(Musico* musicos,Orquesta* orquestas,Instrumento* instrumentos, int 
             if(!orq_buscarID(orquestas,MAX_ORQUESTAS,auxIdOrquesta,&posicionOrquesta))
             {
                 musicos[posicion].idOrquesta=auxIdOrquesta;
+                strcpy(musicos[posicion].nombreOrquesta,orquestas[posicionOrquesta].nombre);
             }
 
             inst_listar(instrumentos,MAX_INSTRUMENTOS);
@@ -261,8 +262,8 @@ int mus_listar(Musico* musicos,int limiteMusicos)
                 continue;
             else
              {
-                printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n APELLIDO: %s\n INSTRUMENTO: %s\n",
-                   i, musicos[i].idMusico,musicos[i].nombre,musicos[i].apellido,musicos[i].nombreInstrumento);
+                printf("\n Posicion: %d\n ID: %d\n NOMBRE: %s\n APELLIDO: %s EDAD: %d\n INSTRUMENTO: %s\n",
+                   i, musicos[i].idMusico,musicos[i].nombre,musicos[i].apellido,musicos[i].edad,musicos[i].nombreInstrumento);
 
                     switch(musicos[i].tipoDeInstrumento)
                     {

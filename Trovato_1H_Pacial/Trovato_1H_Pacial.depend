@@ -144,3 +144,83 @@
 
 1558405290 /home/carla/Parcial_Trovato_1H/Trovato_1H_Pacial/Informes.h
 
+1558474677 source:/home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/funcionesUTN.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+
+1558474677 /home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/funcionesUTN.h
+
+1558474677 /home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/misValid.h
+
+1558482634 source:/home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/Informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"funcionesUTN.h"
+
+1558474677 /home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/Orquesta.h
+
+1558474677 /home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/Instrumento.h
+
+1558476905 /home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/Musico.h
+	"Orquesta.h"
+	"Instrumento.h"
+
+1558474677 source:/home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/Instrumento.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"Instrumento.h"
+	"funcionesUTN.h"
+	"misValid.h"
+
+1558482655 source:/home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+	"Informes.h"
+
+1558482982 /home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/Informes.h
+
+1558474677 source:/home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/misValid.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesUTN.h"
+	"misValid.h"
+
+1558482575 source:/home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/Musico.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+
+1558474677 source:/home/alumno/Parcial_Trovato_1H/Trovato_1H_Pacial/Orquesta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	"funcionesUTN.h"
+	"misValid.h"
+	"Orquesta.h"
+

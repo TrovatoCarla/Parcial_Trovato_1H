@@ -23,6 +23,7 @@ int main()
     Instrumento instrumentos[MAX_INSTRUMENTOS];
 
     int opcion;
+    int opcion2;
     int contadorIdOrquestas=0;
     int contadorIdMusicos=0;
     int contadorIdInstrumentos=0;
@@ -33,85 +34,114 @@ int main()
         printf("\nINICIALIZACIONES CORRECTAS\n");
     }
 
-    orquestas[0].idOrquesta=1;
-    orquestas[0].isEmpty=0;
-    strcpy(orquestas[0].nombre,"Metallica");
-    strcpy(orquestas[0].lugar,"San Francisco");
-    orquestas[0].tipo = 1;
+    instrumentos[0].idInstrumento=1;
+    instrumentos[0].isEmpty=0;
+    strcpy(instrumentos[0].nombre,"Inst1");
+    instrumentos[0].tipo = 1;
     contadorIdInstrumentos++;
+
+    instrumentos[1].idInstrumento=2;
+    instrumentos[1].isEmpty=1;
+    strcpy(instrumentos[1].nombre,"Inst2");
+    instrumentos[1].tipo = 2;
+    contadorIdInstrumentos++;
+
+    instrumentos[3].idInstrumento=3;
+    instrumentos[3].isEmpty=3;
+    strcpy(instrumentos[3].nombre,"Inst3");
+    instrumentos[3].tipo = 2;
+    contadorIdInstrumentos++;
+
+    instrumentos[4].idInstrumento=4;
+    instrumentos[4].isEmpty=3;
+    strcpy(instrumentos[4].nombre,"Inst4");
+    instrumentos[4].tipo = 3;
+    contadorIdInstrumentos++;
+
+    instrumentos[5].idInstrumento=5;
+    instrumentos[5].isEmpty=3;
+    strcpy(instrumentos[5].nombre,"Inst5");
+    instrumentos[5].tipo = 4;
+    contadorIdInstrumentos++;
+
+    orquestas[0].idOrquesta=1;
+    orquestas[1].isEmpty=0;
+    strcpy(orquestas[0].nombre,"Orquesta1");
+    strcpy(orquestas[0].lugar,"Lugar1");
+    orquestas[0].tipo = 1;
+    contadorIdOrquestas++;
 
     orquestas[1].idOrquesta=2;
     orquestas[1].isEmpty=0;
-    strcpy(orquestas[1].nombre,"Grande");
-    strcpy(orquestas[1].lugar,"Cordoba");
+    strcpy(orquestas[1].nombre,"Orquesta2");
+    strcpy(orquestas[1].lugar,"Lugar1");
     orquestas[1].tipo = 2;
     contadorIdOrquestas++;
 
+
     orquestas[2].idOrquesta=3;
     orquestas[2].isEmpty=0;
-    strcpy(orquestas[2].nombre,"Magnifica");
-    strcpy(orquestas[2].lugar,"La Matanza");
+    strcpy(orquestas[2].nombre,"Orquesta3");
+    strcpy(orquestas[2].lugar,"Lugar2");
     orquestas[2].tipo = 3;
     contadorIdOrquestas++;
 
     orquestas[3].idOrquesta=4;
     orquestas[3].isEmpty=0;
-    strcpy(orquestas[3].nombre,"Callejera");
-    strcpy(orquestas[3].lugar,"Boedo");
-    orquestas[3].tipo = 1;
+    strcpy(orquestas[3].nombre,"Orquesta4");
+    strcpy(orquestas[3].lugar,"Lugar3");
+    orquestas[3].tipo = 2;
     contadorIdOrquestas++;
 
-    instrumentos[0].idInstrumento=1;
-    instrumentos[0].isEmpty=0;
-    strcpy(instrumentos[0].nombre,"Guitarra");
-    instrumentos[0].tipo = 1;
-    contadorIdInstrumentos++;
-
-    instrumentos[1].idInstrumento=2;
-    instrumentos[1].isEmpty=0;
-    strcpy(instrumentos[1].nombre,"Bateria");
-    instrumentos[1].tipo = 4;
-    contadorIdInstrumentos++;
-
-    instrumentos[2].idInstrumento=3;
-    instrumentos[2].isEmpty=0;
-    strcpy(instrumentos[2].nombre,"Flauta traverza");
-    instrumentos[2].tipo = 3;
-    contadorIdInstrumentos++;
-
-    instrumentos[3].idInstrumento=4;
-    instrumentos[3].isEmpty=0;
-    strcpy(instrumentos[3].nombre,"Guitarra");
-    instrumentos[3].tipo = 1;
-    contadorIdInstrumentos++;
-
-    strcpy(musicos[0].nombre,"carla");
-    strcpy(musicos[0].apellido,"trovato");
-    musicos[0].edad = 29;
-    musicos[0].isEmpty = 0;
     musicos[0].idMusico = 1;
-    contadorIdMusicos++;
+    strcpy(musicos[0].nombre,"Mus1");
+    strcpy(musicos[0].apellido,"AMus1");
+    musicos[0].edad = 30;
+    musicos[0].idOrquesta=1;
+    musicos[0].idInstrumento=2;
+    musicos[0].isEmpty = 0;
 
-    strcpy(musicos[1].nombre,"karen");
-    strcpy(musicos[1].apellido,"ramirez");
-    musicos[1].edad = 26;
-    musicos[1].isEmpty = 0;
-    musicos[1].idMusico = 2;
-    contadorIdMusicos++;
+    musicos[0].idMusico = 2;
+    strcpy(musicos[0].nombre,"Mus2");
+    strcpy(musicos[0].apellido,"AMus2");
+    musicos[0].edad = 20;
+    musicos[0].idOrquesta=2;
+    musicos[0].idInstrumento=5;
+    musicos[0].isEmpty = 0;
 
-    strcpy(musicos[2].nombre,"Zoe");
-    strcpy(musicos[2].apellido,"zarate");
-    musicos[2].edad = 50;
-    musicos[2].isEmpty = 0;
-    musicos[2].idMusico = 3;
-    contadorIdMusicos++;
+    musicos[0].idMusico = 3;
+    strcpy(musicos[0].nombre,"Mus3");
+    strcpy(musicos[0].apellido,"AMus3");
+    musicos[0].edad = 25;
+    musicos[0].idOrquesta=4;
+    musicos[0].idInstrumento=2;
+    musicos[0].isEmpty = 0;
 
-    strcpy(musicos[3].nombre,"Ana");
-    strcpy(musicos[3].apellido,"costanzo");
-    musicos[3].edad = 12;
-    musicos[3].isEmpty = 0;
-    musicos[3].idMusico = 4;
-    contadorIdMusicos++;
+    musicos[0].idMusico = 4;
+    strcpy(musicos[0].nombre,"Mus4");
+    strcpy(musicos[0].apellido,"AMus4");
+    musicos[0].edad = 27;
+    musicos[0].idOrquesta=4;
+    musicos[0].idInstrumento=1;
+    musicos[0].isEmpty = 0;
+
+    musicos[0].idMusico = 5;
+    strcpy(musicos[0].nombre,"Mus5");
+    strcpy(musicos[0].apellido,"AMus5");
+    musicos[0].edad = 22;
+    musicos[0].idOrquesta=1;
+    musicos[0].idInstrumento=3;
+    musicos[0].isEmpty = 0;
+
+    musicos[0].idMusico = 6;
+    strcpy(musicos[0].nombre,"Mus6");
+    strcpy(musicos[0].apellido,"AMus6");
+    musicos[0].edad = 35;
+    musicos[0].idOrquesta=3;
+    musicos[0].idInstrumento=4;
+    musicos[0].isEmpty = 0;
+
+
 
     mus_listar(musicos,MAX_MUSICOS);
 
@@ -201,8 +231,32 @@ int main()
                 break;
 
             case 10:
+                getInt("\n\n1) Listar orquesta segun lugar \n2) Lista musicos menores 25 años \n3) Listar Orquestas \n4) Listar instrumentos de orquesta X \n5) Orquesta completa \n6) Eliminar Musico \n7) Listar Musico \n8) Agregar Instrumento \n9) Listar instrumentos \n10) INFORMES\n\n ",                   //cambiar
+                      "\nError",sizeof(int),1,1,&opcion2);
+                    system("clear");
+                    switch(opcion2)
+                        {
+                            case 1:
+                                inf_listaOrquestaSegunLugar(orquestas,MAX_ORQUESTAS);
+                                break;
+                            case 2:
+                                inf_listaMusicosMenores(musicos,MAX_MUSICOS);
+                                break;
+                            case 3:
+                                inf_cantidadMusicosPorOrquesta(musicos,orquestas,MAX_MUSICOS,MAX_ORQUESTAS);
+                                break;
+                            case 4:
+                                inf_listarInstrumentosDeOrquesta(orquestas,musicos,instrumentos,MAX_INSTRUMENTOS,MAX_ORQUESTAS,MAX_MUSICOS);
+                                break;
+                            case 5:
+                                inf_contadorTipoInstrumentos(instrumentos,orquestas,MAX_INSTRUMENTOS,MAX_ORQUESTAS);
+                             break;
+                            case 7:
+                                inf_listarMusicosNoViento(musicos,MAX_MUSICOS,SORT_DOWN,SORT_DOWN);
+                                break;
 
-               inf_ordenarApellidoNombre(musicos,MAX_MUSICOS,SORT_DOWN,SORT_UP);
+                        }
+
 
                 break;
             default:

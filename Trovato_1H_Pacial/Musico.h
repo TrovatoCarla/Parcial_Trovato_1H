@@ -11,6 +11,7 @@ typedef struct
     char apellido[30];
     int edad;
     int idOrquesta;
+    char nombreOrquesta[30];
     int idInstrumento;
     char nombreInstrumento[30];
     int tipoDeInstrumento;
